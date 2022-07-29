@@ -1,0 +1,19 @@
+</html>
+    <head>
+        <title>{% block title %}{% endblock %} - Meu Blog</title>
+        <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    </head>
+
+    <body>
+        <h2>Meu Blog</h2>
+        <nav></nav>
+        <p><a href="/meucontato">Contato</a></p>
+        <p><a href="/populate">Popular Posts</a></p>
+        <p><a href="/register">Registro</a></p>
+        <h24><b>Posts</b></h4>
+        <section class="content">
+            {% block content %}
+            {% endblock %}
+        </section>
+    </body>
+</html>

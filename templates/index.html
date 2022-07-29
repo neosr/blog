@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+
+{% block title %} Página Inicial {% endblock %}
+
+{% block content %}
+{% for post in posts %}
+
+    <article class="post">
+        <header>
+            <div>
+                <h1>{{ post.title }}</h1>
+                <div class="about">
+                    <h5>by {{ post.author.username }} on {{ post.created.strftime('%d-%m-%Y') }}</h5>
+                </div>
+            </div>
+        </header>
+        <p class="body">{{ post.body }}</p>
+    </article>
+    {% if not loop.last %}
+    <hr>
+    {% endif %}
+{% else %}
+    <p class="no-posts">Ops... Nenhum post publicado.</p>
+{% endfor %}   
+{% endblock %}

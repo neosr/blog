@@ -1,0 +1,25 @@
+Instalação:
+
+pip install python-dotenv
+
+pip install flask
+flask --version
+
+clear
+
+--Dependencias (Bibliotecas) instaladas:
+pip freeze
+
+--Salva Dependencias
+pip freeze > requirements.txt
+
+--Reintala requerimentos
+pip install -r requirements.txt
+
+--Arquivos preparados
+git status
+
+--Subir todos os arquivos para o GitHub
+git add .
+git commit -m "Mensagem - "
+git push

@@ -1,0 +1,3 @@
+#Ignora pycache (Arquivos de Configuração de Ambiente)
+**/*.pyc
+app.db
