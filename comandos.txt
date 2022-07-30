@@ -21,5 +21,22 @@ git status
 
 --Subir todos os arquivos para o GitHub
 git add .
-git commit -m "Mensagem - "
+git commit -m "Mensagem sobre as alterações"
 git push
+
+instalar o Heroku
+curl https://cli-assets.heroku.com/install.sh | sh
+
+e instalar duas bibliotecas 
+pip install gunicorn psycopg2
+e criar um arquivo Procfile
+
+Logar no Heroku
+terminal: 
+heroku create login -i
+heroku create blog-ocean
+
+Criar banco no Heroku
+heroku addons:create heroku-postgresql:hobby-dev --app blog-python-ocean
+heroku addons:create heroku-postgresql:hooby-dev --app <nome do app de vcs>
+

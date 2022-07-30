@@ -2,9 +2,12 @@
 
 {% block title %} Login {%endblock %}
 {% block content %}
-<form method="post">
-
-     <input type="submit" value="Registrar">
-</form>
+<form method="POST">
+     <label for="username">Usuário </label>
+     <input id="username" name="username" required>
+     <label for="password">Senha </label>
+     <input id="password" name="password" required type="password">
+      <input type="submit" value="Login">
+ </form>
 {% endblock %}
 

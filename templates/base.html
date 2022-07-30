@@ -5,13 +5,31 @@
     </head>
 
     <body>
-        <h2>Meu Blog</h2>
-        <nav></nav>
-        <p><a href="/meucontato">Contato</a></p>
-        <p><a href="/populate">Popular Posts</a></p>
-        <p><a href="/register">Registro</a></p>
-        <h24><b>Posts</b></h4>
+        
+        <nav>
+            <h2>Meu Blog</h2>
+            <ul>
+                {% if current_user.is_authenticated: %}
+                <li><span> {{ current_user.username }} </span></li>
+                <li><a href="/meucontato">Contato</a></li>
+                <li><a href="/populate">Popular Posts</a></li>
+                <li><a href="{{ url_for('logout') }}">Logout</a></li>   
+                {% else %}
+                <li><a href="{{ url_for('register') }}">Register</a></li>
+                <li><a href="{{ url_for('login') }}">Login</a></li> 
+                {% endif %}
+            </ul>
+        </nav>
         <section class="content">
+            <header>
+                {% block header %}
+
+                {% endblock %}
+            </header>
+            {% for message in get_flashed_messages() %}
+                <div class="flash">{{ message }}</div>
+            {% endfor %}
+            
             {% block content %}
             {% endblock %}
         </section>
