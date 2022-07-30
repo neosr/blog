@@ -13,6 +13,7 @@
                 <li><span> {{ current_user.username }} </span></li>
                 <li><a href="/meucontato">Contato</a></li>
                 <li><a href="/populate">Popular Posts</a></li>
+                <li><a href="{{ url_for('create') }}">New Post</a></li> 
                 <li><a href="{{ url_for('logout') }}">Logout</a></li>   
                 {% else %}
                 <li><a href="{{ url_for('register') }}">Register</a></li>
@@ -29,7 +30,7 @@
             {% for message in get_flashed_messages() %}
                 <div class="flash">{{ message }}</div>
             {% endfor %}
-            
+
             {% block content %}
             {% endblock %}
         </section>
